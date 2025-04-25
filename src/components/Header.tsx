@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom'; // Use NavLink for active styles
+import { Link } from 'react-router-dom'; // Use NavLink for active styles
 import knotLogo from '../assets/images/KnotLogo.svg'; // Replace with your actual logo path
 
 const Header: React.FC = () => {
@@ -40,7 +40,7 @@ const Header: React.FC = () => {
 
    sections.forEach((section) => observer.observe(section));
 
-   return () => sections.forEach((section) => observer.disconnect());
+   return () => sections.forEach(() => observer.disconnect());
  }, []);
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsInstagram, BsGithub } from 'react-icons/bs'; // Example icons
+import { BsInstagram } from 'react-icons/bs'; // Example icons
 import knotLogo from '../assets/images/KnotLogo.svg'; // Replace with your actual logo path
 
 const Footer: React.FC = () => {
