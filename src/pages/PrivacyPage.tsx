@@ -11,28 +11,67 @@ const PrivacyPage: React.FC = () => {
     <div className="page-container">
       <h1>Privacy Policy</h1>
       <p><em>Last Updated: April 25, 2025</em></p> {/* Update with actual date */}
+<article>
+  <h2>1. Introduction</h2>
+  <p>
+    Welcome to Knot. We take the protection of your personal data seriously and treat your data confidentially and in accordance with the statutory data protection regulations, in particular the General Data Protection Regulation (GDPR) and the Austrian Data Protection Act (DSG).
+  </p>
+  <p>
+    This Privacy Policy informs you about how we collect, process, and use personal data when you use our mobile app "Knot" or visit our website at why-knot.app.
+  </p>
+  <p>
+    Responsible for data processing:
+    <br />
+    Elias Antony<br />
+    University of [Your Uni], Department [Your Department]<br />
+    Email: [your-email@example.com]
+  </p>
+</article>
 
-      <section>
-        <h2>1. Introduction</h2>
-        <p>
-          Welcome to Knot! We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at [Your Support Email Address].
-        </p>
-        {/* --- Add your full Privacy Policy content here --- */}
-        <p>
-          This privacy notice describes how we might use your information if you use our mobile application ("App") or visit our website at why-knot.app ("Website").
-        </p>
-      </section>
+<article>
+  <h2>2. What Data We Collect</h2>
+  <ul>
+    <li><strong>Account Information:</strong> When registering, we collect your email address and optionally your name (if provided).</li>
+    <li><strong>Login Data:</strong> When using Google or Apple login, we collect the necessary identifiers provided by the respective service.</li>
+    <li><strong>Usage Data:</strong> Firebase automatically collects data such as app version, device model, crash reports and analytics events (if enabled).</li>
+  </ul>
+</article>
 
-      <section>
-          <h2>2. What Information Do We Collect?</h2>
-          <p>
-            <strong>Personal Information You Disclose to Us:</strong> We collect personal information that you voluntarily provide to us when you register on the App, express an interest in obtaining information about us or our products and Services, when you participate in activities on the App or otherwise when you contact us.
-          </p>
-           {/* Add more sections like: How We Use Your Information, Will Your Information Be Shared?, How Long We Keep Your Information, How We Keep Your Information Safe, Your Privacy Rights, Updates To This Notice, How To Contact Us */}
-           <p>The personal information that we collect depends on the context of your interactions with us and the App, the choices you make and the products and features you use. The personal information we collect may include the following: [...]</p>
-      </section>
+<article>
+  <h2>3. Why We Collect Your Data</h2>
+  <p>We process your personal data to:</p>
+  <ul>
+    <li>Provide and maintain the Knot App</li>
+    <li>Enable authentication and account creation</li>
+    <li>Improve app performance and user experience</li>
+    <li>Notify users of important group updates or replies (optional)</li>
+  </ul>
+</article>
 
-       {/* ... other sections of your policy ... */}
+<article>
+  <h2>4. Legal Basis</h2>
+  <p>We process your data based on Art. 6 para. 1 lit. a (consent), lit. b (contract), and lit. f (legitimate interest) GDPR, depending on context. For analytics, consent is requested explicitly.</p>
+</article>
+
+<article>
+  <h2>5. Data Storage and Transfer</h2>
+  <p>All user data is stored in Google Firebase (Firestore), located in the EU (Region europe-west3). We do not transfer your data outside of the EU unless required by Firebase or its subprocessors. In such cases, standard contractual clauses apply.</p>
+</article>
+
+<article>
+  <h2>6. Your Rights</h2>
+  <p>You have the right to access, correct, delete or restrict processing of your personal data, as well as the right to data portability and to lodge a complaint with the Austrian Data Protection Authority (dsb.gv.at).</p>
+</article>
+
+<article>
+  <h2>7. Data Retention</h2>
+  <p>Your account and associated data are retained as long as you use the app. Upon deletion of your account, personal data will be removed unless legal retention periods apply.</p>
+</article>
+
+<article>
+  <h2>8. Contact</h2>
+  <p>If you have questions about data protection or want to exercise your rights, contact Elias Antony at [your-email@example.com].</p>
+</article>
 
     </div>
   );

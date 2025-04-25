@@ -131,9 +131,12 @@ section {
 }
 
 .logo h1 {
-    font-size: 1.5rem;
+    padding-left: 1vw;
+    font-size: 3rem;
     margin: 0;
-    color: var(--primary-color);
+    background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
@@ -268,8 +271,11 @@ section {
 .features-section h1 {
     /* Title for the section */
     text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    font-size: 5rem;
+        background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
 }
 
 .features-grid {
@@ -349,7 +355,7 @@ section {
 }
 
 .faq-heading h1 {
-    font-size: 3.5rem;
+    font-size: 5rem;
     /* Large heading */
     line-height: 1.1;
     color: #000;
@@ -361,8 +367,6 @@ section {
 .faq-heading span {
     /* Style the colored letters */
     color: var(--primary-color);
-    /* Use Knot primary color */
-    /* Optionally add FoodFellas specific classes like .fq-f if needed, but span works */
 }
 
 .faq-questions {
@@ -454,8 +458,10 @@ section {
 }
 
 .preview-text h2 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
+    font-size: 3rem;
+        background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
 }
 

@@ -48,7 +48,7 @@ const Header: React.FC = () => {
     <nav className="sticky-navbar">
       <Link to="/" className="logo" onClick={() => handleNavClick()}>
         <img src={knotLogo} alt="Knot Logo" />
-        <h1>Knot</h1>
+        <h1 id="navbar-h1">Knot</h1>
       </Link>
 
       {/* Desktop Navigation */}
