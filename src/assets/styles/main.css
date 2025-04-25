@@ -1,0 +1,899 @@
+/* src/assets/styles/main.css */
+
+@import url('[https://fonts.googleapis.com/css2?family=Onest:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;700&display=swap](https://fonts.googleapis.com/css2?family=Onest:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;700&display=swap)');
+@import './theme.css';
+/* Import theme variables AFTER font imports */
+
+/* --- Global Fixes & Box Sizing --- */
+html {
+    box-sizing: border-box;
+    /* Prevent horizontal overflow globally */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    /* Inherit box-sizing */
+}
+
+
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    /* Uses 'Onest' from theme.css */
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    /* Ensure body doesn't overflow either */
+}
+
+#root {
+    width: 100%;
+    /* Remove max-width: 100vw; It's often redundant with width: 100% and can sometimes cause issues with scrollbars */
+    text-align: center;
+    /* box-sizing: border-box; <- Handled by global rule */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--title-font);
+    /* Uses 'Source Serif 4' from theme.css */
+    color: var(--primary-color);
+    line-height: 1.2;
+    /* Example line-height */
+    margin-top: 0;
+    /* Example reset */
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+/* Example base sizes */
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    line-height: 1.6;
+    /* Consistent line height for paragraphs */
+    font-size: 1rem;
+    /* Base paragraph size */
+    color: var(--text-light);
+    /* Default text color */
+}
+
+
+/* --- General Section Styling --- */
+/* Add consistent padding to sections */
+section {
+    min-height: 90vh;
+    /* Give sections some minimum height */
+    display: flex;
+    /* Use flex for alignment within sections */
+    flex-direction: column;
+    /* Stack content vertically by default */
+    justify-content: center;
+    /* Center content vertically */
+    align-items: center;
+    /* Center content horizontally */
+    width: 100%;
+    /* Ensure sections take full width */
+}
+
+
+.knot-gradient-bg {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+/* Add component-specific styles here or in separate CSS Modules/files */
+/* E.g., .header-section, .hero-section, .footer-section etc. */
+/* Adapt styles from FoodFellas App.css */
+
+/* === Header Styles === */
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    background: var(--background-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5vw;
+    z-index: 1000;
+    border-bottom: 1px solid #444;
+    min-height: 10vh;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+.logo img {
+    height: 30px;
+    width: auto;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links a.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* === Hero Section Styles === */
+.hero-section {
+    display: flex;
+    /* Override default section flex */
+    flex-direction: row;
+    /* Horizontal layout for hero */
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 10vw;
+    /* Specific padding for hero */
+    color: var(--text-light);
+}
+
+.hero-content {
+    flex: 1 1 55%;
+    /* Allow content to take more space */
+    text-align: left;
+    padding-right: 2rem;
+}
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-top: 0;
+    color: var(--text-light);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    /* Ensure paragraph text is visible */
+}
+
+.hero-image {
+    flex: 1 1 40%;
+    /* Adjust flex basis for image */
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 70vh;
+}
+
+.app-buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.app-buttons button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.app-buttons button img {
+    height: 50px;
+    width: auto;
+}
+
+
+/* === Features Section Styles === */
+/* Reference: FoodFellas .features-section */
+.features-section {
+    background-color: var(--background-dark);
+    /* Match background */
+    color: var(--text-light);
+    /* Override default section padding if needed */
+    padding: 4rem 10vw;
+    /* Adjust padding */
+}
+
+.features-section h1 {
+    /* Title for the section */
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.features-grid {
+    /* NEW class used in Features.tsx */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns like FoodFellas */
+    gap: 3rem;
+    /* Adjust gap */
+    width: 100%;
+    max-width: 1200px;
+    /* Limit width */
+}
+
+.feature {
+    /* Styling for individual feature */
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    /* Subtle hover effect */
+}
+
+.feature span[role="img"] {
+    /* Style the emoji/icon */
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    /* Use primary color for icon */
+}
+
+.feature h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    color: var(--text-light);
+    /* Feature title color */
+}
+
+.feature p {
+    font-size: 0.95rem;
+    color: #ccc;
+    /* Lighter text for description */
+    line-height: 1.5;
+}
+
+/* === FAQ Section Styles === */
+/* Reference: FoodFellas .faq-section */
+.faq-section {
+    background-color: var(--background-light);
+    /* Light background like FoodFellas */
+    color: var(--text-dark);
+    /* Dark text on light background */
+    padding: 4rem 10vw;
+    /* Adjust padding */
+    align-items: stretch;
+    /* Stretch items to fill height */
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* 1 part heading, 2 parts questions */
+    gap: 5rem;
+    /* Adjust gap */
+    align-items: center;
+    /* Vertically align content in grid cells */
+    width: 100%;
+    max-width: 1200px;
+    /* Limit width */
+}
+
+.faq-heading {
+    text-align: left;
+}
+
+.faq-heading h1 {
+    font-size: 3.5rem;
+    /* Large heading */
+    line-height: 1.1;
+    color: #000;
+    /* Black heading text */
+    margin: 0;
+    /* Remove default margin */
+}
+
+.faq-heading span {
+    /* Style the colored letters */
+    color: var(--primary-color);
+    /* Use Knot primary color */
+    /* Optionally add FoodFellas specific classes like .fq-f if needed, but span works */
+}
+
+.faq-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    /* Lighter border */
+    padding: 1rem 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-align: left;
+}
+
+.faq-item:hover {
+    /* Optional hover background */
+    /* background-color: #f9f9f9; */
+}
+
+.faq-question {
+    margin: 0;
+    font-size: 1.2rem;
+    /* Adjust question size */
+    font-weight: bold;
+    font-family: var(--body-font);
+    /* Use body font for question */
+    color: var(--text-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question span {
+    /* Style the +/- indicator */
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-left: 1rem;
+}
+
+.faq-answer {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    /* Slightly lighter answer text */
+    max-height: 0;
+    /* Start collapsed */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-top 0.3s ease-out;
+    /* Smooth transition */
+}
+
+/* Style for open FAQ item */
+.faq-item.open .faq-answer {
+    max-height: 200px;
+    /* Adjust max-height as needed */
+    margin-top: 1rem;
+    /* Add space when open */
+}
+
+/* === Preview Section Styles === */
+.preview-section {
+    background-color: var(--background-dark);
+    /* Keep dark for contrast? Or change to light */
+    color: var(--text-light);
+    padding: 4rem 10vw;
+    /* min-height: 70vh; */
+    /* Removed min-height, let content define it */
+    /* display: flex; */
+    /* Already set by section default */
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.preview-text {
+    text-align: left;
+}
+
+.preview-text h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.preview-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    /* Adjust if background is light */
+}
+
+.preview-carousel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-image {
+    max-width: 80%;
+    height: auto;
+    max-height: 60vh;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* Slightly stronger shadow on dark */
+}
+
+/* === Download Section Styles === */
+.download-section {
+    /* display: flex; */
+    /* Already set by section default */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* min-height: 70vh; */
+    /* Removed min-height */
+    padding: 4rem 5vw;
+    color: var(--text-light);
+}
+
+.download-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.download-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.download-section .app-buttons {
+    justify-content: center;
+    /* Center buttons */
+}
+
+
+/* === Footer Styles === */
+.footer {
+    background-color: var(--background-dark);
+    color: #ccc;
+    padding: 3rem 5vw;
+    border-top: 1px solid #444;
+    text-align: center;
+    /* min-height: auto; Ensure footer doesn't have min-height from section */
+    /* display: block; Override section flex if needed */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.footer-brand {
+    /* No changes needed here unless specific alignment desired */
+}
+
+.footer-logo {
+    height: 35px;
+    margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.footer-links-section h5 {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.footer-links-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-link {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #444;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.footer-icons a {
+    color: #ccc;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-icons a:hover {
+    color: var(--primary-color);
+}
+
+
+/* ======================== */
+/* === Responsive Styles === */
+/* ======================== */
+
+@media (max-width: 992px) {
+
+    /* Tablet breakpoint */
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablets */
+        gap: 2rem;
+    }
+
+    .faq-container {
+        gap: 3rem;
+        /* Reduce gap */
+    }
+
+    .faq-heading h1 {
+        font-size: 3rem;
+    }
+
+    .preview-container {
+        gap: 2rem;
+    }
+
+    .preview-text h2 {
+        font-size: 2rem;
+    }
+
+    .preview-image {
+        max-width: 90%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Mobile breakpoint */
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    /* --- General Section Padding Mobile --- */
+    section {
+        min-height: auto;
+        /* Remove min-height on mobile */
+    }
+
+    /* --- Header Mobile --- */
+    .sticky-navbar {
+        padding: 0.8rem 1rem;
+        min-height: 50px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--background-dark);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 1rem 0;
+        border-top: 1px solid #444;
+        z-index: 999;
+        /* Ensure it's below sticky nav */
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 0.8rem 1rem;
+        text-align: center;
+        border-bottom: 1px solid #444;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a.active::after {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* --- Hero Mobile --- */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 5vw;
+        /* Adjust padding */
+        min-height: auto;
+        /* Remove min height */
+    }
+
+    .hero-content {
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 2rem;
+        flex-basis: auto;
+        /* Reset flex basis */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        max-width: 100%;
+        /* Allow full width */
+    }
+
+    .hero-image {
+        flex-basis: auto;
+        /* Reset flex basis */
+    }
+
+    .hero-image img {
+        max-height: 40vh;
+        /* Adjust mobile height */
+    }
+
+    .app-buttons {
+        justify-content: center;
+    }
+
+    .app-buttons img {
+        height: 45px;
+    }
+
+    /* --- Features Mobile --- */
+    .features-section {
+        padding: 3rem 5vw;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        /* Stack features */
+        gap: 2.5rem;
+    }
+
+    .feature {
+        text-align: center;
+        /* Center text on mobile */
+    }
+
+    .feature span[role="img"] {
+        /* Optional: Adjust icon size */
+    }
+
+
+    /* --- FAQ Mobile --- */
+    .faq-section {
+        padding: 3rem 5vw;
+    }
+
+    .faq-container {
+        grid-template-columns: 1fr;
+        /* Stack FAQ */
+        gap: 2rem;
+        /* Reduce gap */
+        text-align: center;
+        /* Center heading */
+    }
+
+    .faq-heading {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .faq-heading h1 {
+        font-size: 2.5rem;
+        /* Adjust heading size */
+    }
+
+    .faq-item {
+        padding: 0.8rem 0;
+    }
+
+    .faq-question {
+        font-size: 1.1rem;
+    }
+
+    .faq-answer {
+        font-size: 0.9rem;
+    }
+
+
+    /* --- Preview Mobile --- */
+    .preview-section {
+        padding: 3rem 5vw;
+    }
+
+    .preview-container {
+        grid-template-columns: 1fr;
+        /* Stack */
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .preview-text {
+        text-align: center;
+    }
+
+    .preview-text h2 {
+        font-size: 2rem;
+    }
+
+    .preview-text p {
+        font-size: 1rem;
+    }
+
+    .preview-carousel {
+        margin-top: 1rem;
+    }
+
+    .preview-image {
+        max-width: 80%;
+        /* Adjust mobile image size */
+        max-height: 50vh;
+    }
+
+    /* --- Download Mobile --- */
+    .download-section {
+        padding: 3rem 5vw;
+    }
+
+    .download-section h2 {
+        font-size: 2rem;
+    }
+
+    .download-section p {
+        font-size: 1rem;
+    }
+
+    /* --- Footer Mobile --- */
+    .footer-container {
+        grid-template-columns: 1fr;
+        /* Stack columns */
+        text-align: center;
+        /* Center text */
+        justify-items: center;
+        /* Center grid items themselves */
+    }
+
+    /* Ensure lists within footer links are centered */
+    .footer-links-section ul {
+        display: inline-block;
+        /* Allow text-align center to work */
+        text-align: center;
+    }
+
+    .footer-brand,
+    .footer-links-section {
+        margin-bottom: 1.5rem;
+        width: 100%;
+        /* Ensure they take full width for centering */
+    }
+
+    .footer-bottom {
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+
+}

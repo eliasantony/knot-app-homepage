@@ -1,0 +1,113 @@
+/* src/pages/PageStyles.css */
+
+.page-container {
+    max-width: 800px;
+    /* Limit width for readability */
+    margin: 2rem auto;
+    /* Center container and add space top/bottom */
+    padding: 2rem 1.5rem;
+    /* Padding inside the container */
+    text-align: left;
+    /* Left-align text */
+    background-color: var(--background-light);
+    /* Light background for text */
+    color: var(--text-dark);
+    /* Dark text color */
+    border-radius: 8px;
+    /* Optional: rounded corners */
+    min-height: 70vh;
+    /* Ensure it takes up reasonable space */
+}
+
+.page-container h1 {
+    color: var(--primary-color);
+    /* Use theme color for main heading */
+    text-align: center;
+    /* Center the main page title */
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+    /* Separator */
+}
+
+.page-container h2 {
+    color: var(--text-dark);
+    /* Darker color for section titles */
+    font-family: var(--body-font);
+    /* Maybe use body font for H2? */
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    /* Separator */
+    padding-bottom: 0.3rem;
+}
+
+.page-container p {
+    font-size: 1rem;
+    line-height: 1.7;
+    /* Increase line height for readability */
+    color: #444;
+    /* Slightly lighter dark text */
+    margin-bottom: 1rem;
+}
+
+.page-container strong {
+    color: #000;
+    /* Make strong text black */
+}
+
+.page-container a {
+    color: var(--secondary-color);
+    /* Use secondary theme color for links */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.page-container a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.page-container ul,
+.page-container ol {
+    padding-left: 25px;
+    /* Indent lists */
+    margin-bottom: 1rem;
+}
+
+.page-container li {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+.page-container em {
+    /* Style the 'Last Updated' text */
+    display: block;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .page-container {
+        margin: 1rem auto;
+        padding: 1.5rem 1rem;
+    }
+
+    .page-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .page-container p,
+    .page-container li {
+        font-size: 0.95rem;
+    }
+}

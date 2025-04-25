@@ -1,0 +1,14 @@
+/* src/assets/styles/theme.css */
+:root {
+    --primary-color: #BA5680;
+    --secondary-color: #E6683E;
+    --title-font: 'Source Serif 4', serif;
+    --body-font: 'Onest', sans-serif;
+
+    --text-light: #f0f0f0;
+    /* Lighter text for dark background */
+    --text-dark: #333333;
+    --background-dark: #1a1a1a;
+    /* Darker background */
+    --background-light: #ffffff;
+}
