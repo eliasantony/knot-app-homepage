@@ -2,11 +2,26 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const faqData = [
-  { question: "What is Knot?", answer: "Knot is a private newsletter app designed to help you maintain meaningful connections with the important people in your life through shared updates and thoughtful interactions." },
-  { question: "Is Knot free to use?", answer: "Yes, Knot offers a free plan with core features. We may introduce optional premium features in the future." },
-  { question: "Can I create multiple groups?", answer: "Absolutely! You can create separate private groups for different circles, like family, close friends, or colleagues." },
-  { question: "How is Knot different from social media?", answer: "Knot focuses on deeper, asynchronous communication within private groups, free from the noise and public nature of traditional social media feeds." },
-  { question: "Is my data private?", answer: "Yes, privacy is a core principle. Your content is shared only within your private groups. Please refer to our Privacy Policy for details." },
+  {
+    question: "What is Knot?",
+    answer: "Knot is a private newsletter app made for close circles. It helps you stay connected with friends and family by sharing updates, asking questions, and reflecting together—without the chaos of social media."
+  },
+  {
+    question: "Is Knot free to use?",
+    answer: "Yes! You can use Knot for free with all the core features. We might add optional premium features down the road, but the heart of Knot will stay accessible."
+  },
+  {
+    question: "Can I create multiple groups?",
+    answer: "Definitely. Create as many groups as you like—for your family, your best friends, your study group, or any circle you want to keep close."
+  },
+  {
+    question: "How is Knot different from social media?",
+    answer: "Knot is slower, more intentional. Instead of fast feeds and endless scrolling, it's about meaningful updates within private, trusted spaces. No likes, no followers—just connection."
+  },
+  {
+    question: "Is my data private?",
+    answer: "Absolutely. What you share stays within your private groups. We take privacy seriously—check out our Privacy Policy if you’d like the full details."
+  },
 ];
 
 const FAQ: React.FC = () => {

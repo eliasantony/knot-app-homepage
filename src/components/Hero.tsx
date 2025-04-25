@@ -28,7 +28,7 @@ const Hero: React.FC = () => (
         viewport={{ once: true }}
         transition={fadeUp.transition(0.1)}
       >
-        Staying connected with your people has never been this meaningful.
+        Real connections. Private updates. Shared memories.
       </motion.h1>
 
       <motion.p
@@ -37,7 +37,7 @@ const Hero: React.FC = () => (
         viewport={{ once: true }}
         transition={fadeUp.transition(0.2)}
       >
-        Deepen your relationships with private, thoughtful newsletters. Share updates, ask questions, and stay close, effortlessly.
+        Send private questions, updates, and reflections—all in one place. No feeds. No noise. Just you and your people.
       </motion.p>
 
       <motion.div

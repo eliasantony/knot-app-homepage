@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 
 // Example feature data - adapt based on your PRD
 const knotFeatures = [
-  { icon: '❓', title: 'Custom Questions', description: 'Spark meaningful conversations with personalized prompts for your group.' },
-  { icon: '🔔', title: 'Smart Notifications', description: 'Stay updated without the noise. Get notified about the things that matter most.' },
-  { icon: '📨', title: 'Group Invites', description: 'Easily bring your friends, family, or team together in a private space.' },
-  { icon: '👍', title: 'Reactions', description: 'Engage quickly and show appreciation with simple, fun reactions.' },
-  { icon: '✨', title: 'Private Newsletters', description: 'Share life updates, thoughts, and moments in a focused, intimate format.' },
-  { icon: '🎨', title: 'Custom Styling', description: 'Personalize the look and feel of your newsletters to match your vibe.' },
+  { icon: '❓', title: 'Custom Questions', description: 'Start real conversations with personalized questions tailored to your group’s vibe.' },
+  { icon: '🔔', title: 'Smart Notifications', description: 'Only get notified about what truly matters—no noise, no distractions.' },
+  { icon: '📨', title: 'Group Invites', description: 'Bring your favorite people together. Invite friends, family, or your crew with ease.' },
+  { icon: '👍', title: 'Reactions', description: 'Say more with less—respond with quick reactions that show you’re there.' },
+  { icon: '✨', title: 'Private Newsletters', description: 'Share updates, stories, and reflections in a calm, private space built for closeness.' },
+  { icon: '🎨', title: 'Custom Styling', description: 'Make it yours. Style your newsletters to reflect your personality and tone.' },
 ];
 
 const Features: React.FC = () => (
