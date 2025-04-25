@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://foodfellas.app/sitemap.xml

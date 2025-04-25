@@ -1,0 +1,51 @@
+.legal-container {
+    max-width: 800px;
+    margin: 60px auto;
+    /* Centers the content */
+    padding: 20px;
+    background: #242424;
+    /* Matches your website's dark theme */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.legal-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.legal-container h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.legal-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.last-updated {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #aaa;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .legal-container {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .legal-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .legal-container h2 {
+        font-size: 1.2rem;
+    }
+}
