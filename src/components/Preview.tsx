@@ -1,14 +1,12 @@
 import React from 'react';
 // Import carousel library if needed, e.g., import { Swiper, SwiperSlide } from 'swiper/react';
 // import 'swiper/css';
-import appScreen1 from '../assets/images/app-preview1.png'; // Replace with actual screen previews
-import appScreen2 from '../assets/images/app-preview2.png';
-import appScreen3 from '../assets/images/app-preview3.png';
+import appScreen1 from '../assets/images/Group Detail.png'; // Replace with actual screen previews
 
 
 const Preview: React.FC = () => {
     // Placeholder images - replace with yours
-    const screens = [appScreen1, appScreen2, appScreen3];
+    const screens = [appScreen1];
 
     return (
         <section id="preview" className="preview-section">

@@ -1,0 +1,21 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "WPQV8ZXG9T.com.knotnewsletter.app",
+        "paths": [
+          "/invite/*",
+          "/join/*",
+          "/link/*",
+          "*"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "WPQV8ZXG9T.com.knotnewsletter.app"
+    ]
+  }
+}
