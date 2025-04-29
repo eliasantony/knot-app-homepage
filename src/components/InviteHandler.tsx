@@ -26,3 +26,5 @@ const InviteHandler: React.FC = () => {
     </div>
   );
 };
+
+export default InviteHandler;
