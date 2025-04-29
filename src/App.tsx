@@ -41,7 +41,7 @@ const App: React.FC = () => {
           <Route path="/support" element={<SupportPage />} />
 
           {/* Dynamic Invite Route */}
-          <Route path="/invite/group/:groupId/:token" element={<InviteHandler />} />
+          <Route path="/invite/:groupId/:token" element={<InviteHandler />} />
 
           {/* Catch-all 404 Route */}
           <Route path="*" element={<NotFoundPage />} />
