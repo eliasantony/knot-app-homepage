@@ -10,7 +10,7 @@ const PrivacyPage: React.FC = () => {
   return (
     <div className="page-container">
       <h1>Privacy Policy</h1>
-      <p><em>Last Updated: April 25, 2025</em></p> {/* Update with actual date */}
+      <p><em>Last Updated: May 30, 2025</em></p> {/* Update with actual date */}
 <article>
   <h2>1. Introduction</h2>
   <p>
@@ -23,8 +23,11 @@ const PrivacyPage: React.FC = () => {
     Responsible for data processing:
     <br />
     Elias Antony<br />
-    University of [Your Uni], Department [Your Department]<br />
-    Email: [your-email@example.com]
+    University of Applied Sciences St. Pölten, Department Creative Computing<br />
+    Email: <a href="mailto:info@why-knot-app">info@why-knot-app</a>
+  </p>
+  <p>
+    Please also refer to the privacy policy of the UAS St. Pölten, which applies to all students and employees: <a href="https://www.fhstp.ac.at/en/legal-information/legal-information?set_language=en" target="_blank" rel="noopener noreferrer">https://www.fhstp.ac.at/en/legal-information/legal-information</a>.
   </p>
 </article>
 
@@ -70,7 +73,7 @@ const PrivacyPage: React.FC = () => {
 
 <article>
   <h2>8. Contact</h2>
-  <p>If you have questions about data protection or want to exercise your rights, contact Elias Antony at [your-email@example.com].</p>
+  <p>If you have questions about data protection or want to exercise your rights, contact Elias Antony at <a href="mailto:info@why-knot-app">info@why-knot-app</a>.</p>
 </article>
 
     </div>

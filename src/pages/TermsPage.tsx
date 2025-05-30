@@ -9,7 +9,7 @@ const TermsPage: React.FC = () => {
   return (
     <div className="page-container">
       <h1>Terms of Service</h1>
-      <p><em>Last Updated: April 25, 2025</em></p> {/* Update with actual date */}
+      <p><em>Last Updated: May 30, 2025</em></p>
 <article>
   <h2>1. Agreement to Terms</h2>
   <p>These Terms of Service (“Terms”) govern your use of the Knot app and website. By using the app or site, you agree to be bound by these Terms.</p>
@@ -20,8 +20,11 @@ const TermsPage: React.FC = () => {
   <p>This app is developed and operated as part of a university project by:</p>
   <p>
     Elias Antony<br />
-    University of [Your Uni], Department [Your Department]<br />
-    Email: [your-email@example.com]
+    University of Applied Sciences St. Pölten, Department Creative Computing<br />
+    Email: <a href="mailto:info@why-knot-app">info@why-knot-app</a>
+  </p>
+  <p>
+    Please also refer to the privacy policy of the UAS St. Pölten, which applies to all students and employees: <a href="https://www.fhstp.ac.at/en/legal-information/legal-information?set_language=en" target="_blank" rel="noopener noreferrer">https://www.fhstp.ac.at/en/legal-information/legal-information</a>.
   </p>
 </article>
 
@@ -62,9 +65,8 @@ const TermsPage: React.FC = () => {
 
 <article>
   <h2>10. Contact</h2>
-  <p>If you have questions about these Terms, contact Elias Antony at [your-email@example.com].</p>
+  <p>If you have questions about these Terms, contact Elias Antony at <a href="mailto:info@why-knot-app">info@why-knot-app</a>.</p>
 </article>
-
     </div>
   );
 };

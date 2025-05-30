@@ -15,8 +15,6 @@ const SupportPage: React.FC = () => {
         <p>
           Need assistance with Knot? We're here to help! Please check our Frequently Asked Questions (FAQ) section first, as your question might already be answered there.
         </p>
-        {/* Optional: Link to FAQ section */}
-        {/* <p><a href="/#faq">Visit the FAQ</a></p> */}
       </article>
 
       <article>
@@ -26,13 +24,11 @@ const SupportPage: React.FC = () => {
         </p>
         <ul>
           <li>
-            <strong>Email:</strong> <a href="mailto:support@why-knot.app">support@why-knot.app</a> {/* Replace with your actual support email */}
+            <strong>Instagram:</strong> (prefered) <a href="https://instagram.com/knot_app" target="_blank" rel="noopener noreferrer">@knot_app</a>
           </li>
           <li>
-            <strong>Instagram:</strong> <a href="https://instagram.com/knot_app" target="_blank" rel="noopener noreferrer">@knot_app</a> {/* Replace with your actual Instagram handle */}
+            <strong>Email:</strong> <a href="mailto:support@why-knot.app">support@why-knot.app</a> 
           </li>
-          {/* Add other contact methods if available (e.g., contact form link, social media) */}
-          {/* <li><strong>Twitter:</strong> <a href="https://twitter.com/YourKnotApp" target="_blank" rel="noopener noreferrer">@YourKnotApp</a></li> */}
         </ul>
         <p>
           We aim to respond to all inquiries within 48 business hours.
