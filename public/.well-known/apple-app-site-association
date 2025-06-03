@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appID": "WPQV8ZXG9T.com.knotnewsletter.app",
+        "appID": "395WJ4HT9P.com.knotnewsletter.app",
         "paths": [
           "/invite/*",
           "/join/*",
@@ -15,7 +15,7 @@
   },
   "webcredentials": {
     "apps": [
-      "WPQV8ZXG9T.com.knotnewsletter.app"
+      "395WJ4HT9P.com.knotnewsletter.app"
     ]
   }
 }
