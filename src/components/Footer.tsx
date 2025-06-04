@@ -53,6 +53,11 @@ const Footer: React.FC = () => {
                 Terms & Conditions
               </Link>
             </li>
+            <li>
+              <Link to="/terms-of-use" onClick={scrollToTop} className="footer-link">
+                Terms of Use
+              </Link>
+            </li>
              <li>
               <Link to="/support" onClick={scrollToTop} className="footer-link">
                 Support

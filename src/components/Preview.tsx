@@ -1,63 +1,80 @@
-import React from 'react';
-// Import carousel library if needed, e.g., import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/css';
-import appScreen1 from '../assets/images/Group Detail.png'; // Replace with actual screen previews
+import React, { useEffect } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
+import appScreen1 from '../assets/images/app_preview_1.jpg';
+import appScreen2 from '../assets/images/app_preview_2.jpg';
+import appScreen3 from '../assets/images/app_preview_3.jpg';
+import appScreen4 from '../assets/images/app_preview_4.png';
 
 const Preview: React.FC = () => {
-    // Placeholder images - replace with yours
-    const screens = [appScreen1];
+  // Scroll to top on mount (matches your other pages)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-    return (
-        <section id="preview" className="preview-section">
-            <div className="preview-container">
-                <div className="preview-text">
-                    <h2>See Knot in Action</h2>
-                    <p>
-                        Get a glimpse of how Knot helps you create beautiful, private newsletters and stay connected with your groups. Intuitive design, focused communication.
-                    </p>
-                    {/* Add more descriptive text if needed */}
+  // Slider settings (copied/adapted from your preview.jsx)
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 3,           // 3 images at once on desktop
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '10%',      // makes prev/next peek in behind
+    autoplay: true,
+    autoplaySpeed: 4000,
+    focusOnSelect: true,
+    cssEase: 'ease-in-out',
+    arrows: false,             // hide arrows (you can toggle true if you want them)
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,      // on mobile, show just one
+          centerMode: true,
+          centerPadding: '0px',
+          arrows: false,
+        },
+      },
+    ],
+  };
+
+  // All of your app‐preview images
+  const screens = [
+    appScreen1,
+    appScreen2,
+    appScreen3,
+    appScreen4,
+  ];
+
+  return (
+    <section id="preview" className="preview-section">
+
+        <div className="preview-container">
+          <div className="preview-text">
+            <h2>See Knot in Action</h2>
+            <p>
+              Get a glimpse of how Knot helps you create beautiful, private newsletters and stay connected with your groups. Intuitive design, focused communication.
+            </p>
+          </div>
+          <div className="preview-carousel">
+            <Slider {...settings}>
+              {screens.map((src, index) => (
+                <div key={index} className="preview-slide">
+                  <img
+                    src={src}
+                    alt={`Knot App Screen ${index + 1}`}
+                    className="preview-image"
+                  />
                 </div>
-                <div className="preview-carousel">
-                    {/* Basic static image display - Replace with a Carousel component for swiping */}
-                    {/* Example using just the first image for now */}
-                     <img
-                            src={screens[0]}
-                            alt={`Knot App Screen`}
-                            className="preview-image"
-                        />
-
-                    {/* --- OR --- */}
-                    {/* Example using a simple map (no carousel functionality yet) */}
-                    {/* <div style={{ display: 'flex', gap: '1rem', overflowX: 'auto' }}>
-                       {screens.map((screen, index) => (
-                           <img
-                                key={index}
-                                src={screen}
-                                alt={`Knot App Screen ${index + 1}`}
-                                className="preview-image" // Adjust style if needed for multiple static images
-                                style={{ flexShrink: 0, width: '250px' }} // Example inline style
-                            />
-                        ))}
-                    </div> */}
-
-                    {/* --- OR --- */}
-                    {/* Example with a library like Swiper.js */}
-                    {/* <Swiper spaceBetween={30} slidesPerView={1.2} centeredSlides={true}>
-                        {screens.map((screen, index) => (
-                            <SwiperSlide key={index}>
-                                <img
-                                    src={screen}
-                                    alt={`Knot App Screen ${index + 1}`}
-                                    className="preview-image"
-                                />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper> */}
-                </div>
-            </div>
-        </section>
-    );
+              ))}
+            </Slider>
+          </div>
+        </div>
+    </section>
+  );
 };
 
 export default Preview;

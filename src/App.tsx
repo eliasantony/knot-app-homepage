@@ -15,6 +15,7 @@ import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
 import SupportPage from './pages/SupportPage';
 import NotFoundPage from './pages/NotFoundPage';
+import TermsOfUsePage from './pages/TermsOfUsePage';
 
 // Main landing page layout component
 const HomePage: React.FC = () => (
@@ -39,6 +40,7 @@ const App: React.FC = () => {
           {/* Individual Page Routes */}
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/terms-of-use" element={<TermsOfUsePage />} /> 
           <Route path="/support" element={<SupportPage />} />
 
           {/* Dynamic Invite Route */}
