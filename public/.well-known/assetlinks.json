@@ -3,9 +3,9 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.knot.app",
+      "package_name": "com.knotnewsletter.app",
       "sha256_cert_fingerprints": [
-        "59:DB:E9:A7:CA:81:DD:EF:21:81:C2:C9:46:7F:99:9C:A8:2F:53:34:56:2F:5A:EA:81:76:71:1A:60:D9:19:4B",
+        "59:db:e9:a7:ca:81:dd:ef:21:81:c2:c9:46:7f:99:9c:a8:2f:53:34:56:2f:5a:ea:81:76:71:1a:60:d9:19:4b",
         "96:b3:97:77:48:19:cd:8f:9b:a3:b1:70:07:8d:9a:1f:18:39:cf:f9:2c:fc:af:4a:44:41:f2:d9:b6:1e:70:fe"
       ]
     }
