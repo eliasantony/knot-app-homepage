@@ -250,8 +250,6 @@ background: linear-gradient(to right, var(--primary-color), var(--secondary-colo
     border: none;
     padding: 0;
     cursor: pointer;
-    opacity: 0.7;
-    cursor: not-allowed;
 }
 
 .app-buttons button img {
@@ -328,10 +326,8 @@ background: linear-gradient(to right, var(--primary-color), var(--secondary-colo
 }
 
 /* === FAQ Section Styles === */
-/* Reference: FoodFellas .faq-section */
 .faq-section {
     background-color: var(--background-light);
-    /* Light background like FoodFellas */
     color: var(--text-dark);
     /* Dark text on light background */
     padding: 4rem 10vw;
@@ -435,60 +431,10 @@ background: linear-gradient(to right, var(--primary-color), var(--secondary-colo
 
 /* === Preview Section Styles === */
 .preview-section {
-    background-color: var(--background-dark);
-    /* Keep dark for contrast? Or change to light */
-    color: var(--text-light);
+    background-color: var(--background-light);
+    color: var(--text-dark);
     padding: 4rem 10vw;
-    /* min-height: 70vh; */
-    /* Removed min-height, let content define it */
-    /* display: flex; */
-    /* Already set by section default */
-    justify-content: center;
-    align-items: center;
-}
-
-.preview-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-}
-
-.preview-text {
-    text-align: left;
-}
-
-.preview-text h2 {
-    font-size: 3rem;
-        background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
-}
-
-.preview-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-light);
-    /* Adjust if background is light */
-}
-
-.preview-carousel {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.preview-image {
-    max-width: 80%;
-    height: auto;
-    max-height: 60vh;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    /* Slightly stronger shadow on dark */
+    min-height: 100vh;
 }
 
 /* === Download Section Styles === */

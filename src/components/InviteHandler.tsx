@@ -112,12 +112,16 @@ const InviteHandler: React.FC = () => {
         </>
       )}
       <div className="app-buttons">
-      <button disabled>
-        <img src={appStoreButton} alt="Download on App Store (coming soon)" />
-      </button>
-      <button disabled>
-        <img src={playStoreButton} alt="Get it on Google Play (coming soon)" />
-      </button>
+      <a href="https://apps.apple.com/us/app/knot-app/6746635520" target="_blank" rel="noopener noreferrer">
+          <button>
+            <img src={appStoreButton} alt="Download on App Store"/>
+          </button>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.knotnewsletter.app" target="_blank" rel="noopener noreferrer">
+        <button>
+          <img src={playStoreButton} alt="Get it on Google Play" />
+        </button>
+        </a>
     </div>
     </div>
     

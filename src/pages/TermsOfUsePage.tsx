@@ -16,7 +16,7 @@ const TermsOfUsePage: React.FC = () => {
         <h2>1. Introduction</h2>
         <p>
           These Terms of Use outline the basic rules and expectations for anyone using the Knot app or website. If you’d like to see all the legal details—including disclaimers, governing law, and intellectual property rules—please refer to our full&nbsp;
-          <a href="/terms-of-service">
+          <a href="/terms">
             Terms of Service
           </a>.
         </p>

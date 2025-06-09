@@ -1,79 +1,124 @@
-import React, { useEffect } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import styles from '../assets/styles/Preview.module.css';
 
 import appScreen1 from '../assets/images/app_preview_1.jpg';
 import appScreen2 from '../assets/images/app_preview_2.jpg';
 import appScreen3 from '../assets/images/app_preview_3.jpg';
 import appScreen4 from '../assets/images/app_preview_4.png';
+import appScreen5 from '../assets/images/app_preview_5.png';
+import appScreen6 from '../assets/images/app_preview_6.png';
+import appScreen7 from '../assets/images/app_preview_7.png';
+import appScreen8 from '../assets/images/app_preview_8.png';
+import appScreen9 from '../assets/images/app_preview_9.png';
+import appScreen10 from '../assets/images/app_preview_10.png';
+
+const images: string[] = [
+  appScreen1,
+  appScreen2,
+  appScreen3,
+  appScreen4,
+  appScreen5,
+  appScreen6,
+  appScreen7,
+  appScreen8,
+  appScreen9,
+  appScreen10,
+];
+
+const AUTO_SWIPE_DELAY = 5000; // 5 seconds
 
 const Preview: React.FC = () => {
-  // Scroll to top on mount (matches your other pages)
-  useEffect(() => {
-    window.scrollTo(0, 0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const autoSwipeTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const goToNext = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   }, []);
 
-  // Slider settings (copied/adapted from your preview.jsx)
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 3,           // 3 images at once on desktop
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: '10%',      // makes prev/next peek in behind
-    autoplay: true,
-    autoplaySpeed: 4000,
-    focusOnSelect: true,
-    cssEase: 'ease-in-out',
-    arrows: false,             // hide arrows (you can toggle true if you want them)
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,      // on mobile, show just one
-          centerMode: true,
-          centerPadding: '0px',
-          arrows: false,
-        },
-      },
-    ],
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
-  // All of your app‐preview images
-  const screens = [
-    appScreen1,
-    appScreen2,
-    appScreen3,
-    appScreen4,
-  ];
+  const startAutoSwipeTimer = useCallback(() => {
+    if (autoSwipeTimerRef.current) {
+      clearInterval(autoSwipeTimerRef.current);
+    }
+    autoSwipeTimerRef.current = setInterval(goToNext, AUTO_SWIPE_DELAY);
+  }, [goToNext]);
+
+  // Start auto-swipe timer on mount
+  useEffect(() => {
+    startAutoSwipeTimer();
+    return () => {
+      if (autoSwipeTimerRef.current) {
+        clearInterval(autoSwipeTimerRef.current);
+      }
+    };
+  }, [startAutoSwipeTimer]);
+
+  // Handlers for manual navigation that reset the timer
+  const handleNext = () => {
+    goToNext();
+    startAutoSwipeTimer();
+  };
+
+  const handlePrevious = () => {
+    goToPrevious();
+    startAutoSwipeTimer();
+  };
 
   return (
-    <section id="preview" className="preview-section">
-
-        <div className="preview-container">
-          <div className="preview-text">
-            <h2>See Knot in Action</h2>
-            <p>
-              Get a glimpse of how Knot helps you create beautiful, private newsletters and stay connected with your groups. Intuitive design, focused communication.
-            </p>
+    <div className={styles.previewSection}>
+      <div className={styles.previewContainer}>
+        <div className={styles.previewText}>
+          <h2 className={styles.knotGradientBg}>See Knot in Action</h2>
+          <p>
+            Get a glimpse of how Knot helps you create beautiful, private newsletters and stay connected with your groups. Intuitive design, focused communication.
+          </p>
+        </div>
+        <div className={styles.previewCarousel}>
+          <div
+            className={styles.imageContainer}
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {images.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`Preview ${index + 1}`}
+                className={styles.previewImage}
+              />
+            ))}
           </div>
-          <div className="preview-carousel">
-            <Slider {...settings}>
-              {screens.map((src, index) => (
-                <div key={index} className="preview-slide">
-                  <img
-                    src={src}
-                    alt={`Knot App Screen ${index + 1}`}
-                    className="preview-image"
-                  />
-                </div>
-              ))}
-            </Slider>
+          <button
+            onClick={handlePrevious}
+            className={`${styles.carouselButton} ${styles.prev}`}
+            aria-label="Previous image"
+          >
+            &#10094;
+          </button>
+          <button
+            onClick={handleNext}
+            className={`${styles.carouselButton} ${styles.next}`}
+            aria-label="Next image"
+          >
+            &#10095;
+          </button>
+          <div className={styles.carouselDots}>
+            {images.map((_, index) => (
+              <span
+                key={index}
+                className={`${styles.dot} ${currentIndex === index ? styles.active : ''}`}
+                onClick={() => {
+                  setCurrentIndex(index);
+                  startAutoSwipeTimer();
+                }}
+              />
+            ))}
           </div>
         </div>
-    </section>
+      </div>
+    </div>
   );
 };
 
