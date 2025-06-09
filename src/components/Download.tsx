@@ -9,7 +9,7 @@ const Download: React.FC = () => (
   <section id="download" className="download-section knot-gradient-bg">
     <h2>Ready to Connect?</h2>
     <p>
-      Download Knot today and start building deeper connections with your favorite people. Available soon on iOS and Android.
+      Download Knot today and start building deeper connections with your favorite people. Available now on iOS and Android.
     </p>
     <div className="app-buttons">
     <a href="https://apps.apple.com/us/app/knot-app/6746635520" target="_blank" rel="noopener noreferrer">
@@ -23,10 +23,6 @@ const Download: React.FC = () => (
         </button>
         </a>
     </div>
-     {/* Optional Image */}
-     {/* <div className="download-image">
-         <img src={downloadIllustration} alt="Illustration showing connection" />
-     </div> */}
   </section>
 );
 
